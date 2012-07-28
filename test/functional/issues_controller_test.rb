@@ -14,12 +14,13 @@ class IssuesControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
+    assert_equal Tag.all, assigns(:tags)
   end
 
   test "should create issue" do
     assert_difference('Issue.count') do
       post :create, issue: { content: @issue.content, dead_line: @issue.dead_line, title: @issue.title }
-    end
+    end 
 
     assert_redirected_to issue_path(assigns(:issue))
   end

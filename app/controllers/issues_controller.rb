@@ -25,6 +25,7 @@ class IssuesController < ApplicationController
   # GET /issues/new.json
   def new
     @issue = Issue.new
+    @tags = Tag.all
 
     respond_to do |format|
       format.html # new.html.erb
