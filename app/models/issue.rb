@@ -3,4 +3,6 @@ class Issue < ActiveRecord::Base
 
   has_many :taggings
   has_many :tag, :through=>:taggings
+  attr_accessor :tag_name
+  
 end
