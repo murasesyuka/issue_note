@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  dead_line: 2012-07-28 13:47:48
+
+two:
+  title: MyString
+  content: MyText
+  dead_line: 2012-07-28 13:47:48
