@@ -45,6 +45,13 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
+        tags = Tag.where(:name=>@issue.tag_name)
+        if tags.count.zero?
+          @issue.tags.create(:name=>@issue.tag_name)
+        else
+          @issue.tags << tags.first
+        end
+
         format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
         format.json { render json: @issue, status: :created, location: @issue }
       else
